@@ -11,11 +11,9 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.walmart_assessment.data.Country
 import com.android.walmart_assessment.databinding.FragmentCountriesBinding
-import com.android.walmart_assessment.presentation.CountriesAdapter
 import com.android.walmart_assessment.utils.Di
 import com.android.walmart_assessment.utils.EventObserver
 
-//TODO: themes
 class CountriesFragment : Fragment() {
 
     private val countriesVm: CountriesVM by viewModels { Di.getCountriesVMFactory() }
@@ -57,7 +55,7 @@ class CountriesFragment : Fragment() {
     private fun showContent(it: List<Country>) {
         val adapter = binding.rvCountries.adapter as CountriesAdapter
         adapter.items = it
-        //TODO: Proper notify, diff util
+        //To notify properly use diff util, skipped it for now
         adapter.notifyDataSetChanged()
     }
 

@@ -1,4 +1,4 @@
-package com.android.walmart_assessment.presentation
+package com.android.walmart_assessment.presentation.countries
 
 import android.view.LayoutInflater
 import android.view.View
