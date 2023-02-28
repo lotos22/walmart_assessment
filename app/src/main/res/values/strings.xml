@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">walmart_assessment</string>
+
+    <string name="generic_error">Something went wrong</string>
+    <string name="generic_text">My Name is %1$s %2$s</string>
+
+    <string name="country_format_name_region">%1$s, %2$s</string>
+</resources>

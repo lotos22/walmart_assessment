@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="country"
+            type="com.android.walmart_assessment.data.Country" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/list_item_padding"
+        tools:backgroundTint="@android:color/transparent">
+
+        <TextView
+            android:id="@+id/tv_country_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/marginS"
+            android:text="@{@string/country_format_name_region(country.name,country.region)}"
+            app:layout_constraintEnd_toStartOf="@id/tv_country_code"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="United States of America, NA" />
+
+        <TextView
+            android:id="@+id/tv_country_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{country.code}"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_country_name"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toEndOf="@+id/tv_country_name"
+            tools:text="US" />
+
+        <TextView
+            android:id="@+id/tv_country_capital"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{country.capital}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@+id/tv_country_name"
+            tools:text="Washington, D.C." />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/sides_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/sides_margin" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
